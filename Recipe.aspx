@@ -22,22 +22,49 @@
         <h1 class="auto-style1" style="text-align: center">Wicked Easy Recipes</h1>
         <h3 style="text-align: center">Using 5 Ingredients or Less!</h3>
         <p class="auto-style1" style="text-align: center">
-            <strong><a href = "Default.aspx"> Home</a> |<a href= "NewRecipe.asp"> New Recipes </a> |<a href= "AboutUS.asp"> About Us</a> |<a href= "Contact.asp"> Contact </a>|</strong></p>
+            <strong><a href = "Default.aspx"> Home</a> |<a href= "Recipe.aspx"> New Recipes </a> |<a href= "AboutUS.aspx"> About Us</a> |<a href= "Contact.aspx"> Contact </a>|</strong></p>
         <p class="auto-style1" style="text-align: center">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" SelectCommand="SELECT [Recipie ] AS Recipie_, [SubmittedBy], [Ingredient1], [Ingredient2], [Ingredient3], [Ingredient4], [Ingredient5], [Prepration], [Notes ] AS Notes_, [RecipeID] FROM [Table]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RecipeID" DataSourceID="SqlDataSource1" Height="417px" Width="964px">
-                <Columns>
-                    <asp:BoundField DataField="Recipie_" HeaderText="Recipe" SortExpression="Recipie_" />
-                    <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
-                    <asp:BoundField DataField="Ingredient1" HeaderText="Ingredient 1" SortExpression="Ingredient1" />
-                    <asp:BoundField DataField="Ingredient2" HeaderText="Ingredient 2" SortExpression="Ingredient2" />
-                    <asp:BoundField DataField="Ingredient3" HeaderText="Ingredient 3" SortExpression="Ingredient3" />
-                    <asp:BoundField DataField="Ingredient4" HeaderText="Ingredient 4" SortExpression="Ingredient4" />
-                    <asp:BoundField DataField="Ingredient5" HeaderText="Ingredient 5" SortExpression="Ingredient5" />
-                    <asp:BoundField DataField="Prepration" HeaderText="Prepration" SortExpression="Prepration" />
-                    <asp:BoundField DataField="Notes_" HeaderText="Notes" SortExpression="Notes_" />
-                </Columns>
-            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" DeleteCommand="DELETE FROM [Table] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table] ([Receipe ], [SubmittedBy], [Ingredients1], [Ingredients2], [Ingredients3], [Ingredients4], [Ingredients5], [Preperation], [Notes]) VALUES (@Receipe_, @SubmittedBy, @Ingredients1, @Ingredients2, @Ingredients3, @Ingredients4, @Ingredients5, @Preperation, @Notes)" SelectCommand="SELECT * FROM [Table]" UpdateCommand="UPDATE [Table] SET [Receipe ] = @Receipe_, [SubmittedBy] = @SubmittedBy, [Ingredients1] = @Ingredients1, [Ingredients2] = @Ingredients2, [Ingredients3] = @Ingredients3, [Ingredients4] = @Ingredients4, [Ingredients5] = @Ingredients5, [Preperation] = @Preperation, [Notes] = @Notes WHERE [Id] = @Id">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Receipe_" Type="String" />
+                    <asp:Parameter Name="SubmittedBy" Type="String" />
+                    <asp:Parameter Name="Ingredients1" Type="String" />
+                    <asp:Parameter Name="Ingredients2" Type="String" />
+                    <asp:Parameter Name="Ingredients3" Type="String" />
+                    <asp:Parameter Name="Ingredients4" Type="String" />
+                    <asp:Parameter Name="Ingredients5" Type="String" />
+                    <asp:Parameter Name="Preperation" Type="String" />
+                    <asp:Parameter Name="Notes" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Receipe_" Type="String" />
+                    <asp:Parameter Name="SubmittedBy" Type="String" />
+                    <asp:Parameter Name="Ingredients1" Type="String" />
+                    <asp:Parameter Name="Ingredients2" Type="String" />
+                    <asp:Parameter Name="Ingredients3" Type="String" />
+                    <asp:Parameter Name="Ingredients4" Type="String" />
+                    <asp:Parameter Name="Ingredients5" Type="String" />
+                    <asp:Parameter Name="Preperation" Type="String" />
+                    <asp:Parameter Name="Notes" Type="String" />
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="424px">
+                <Fields>
+                    <asp:BoundField DataField="Receipe " HeaderText="Receipe " SortExpression="Receipe " />
+                    <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
+                    <asp:BoundField DataField="Ingredients1" HeaderText="Ingredients1" SortExpression="Ingredients1" />
+                    <asp:BoundField DataField="Ingredients2" HeaderText="Ingredients2" SortExpression="Ingredients2" />
+                    <asp:BoundField DataField="Ingredients3" HeaderText="Ingredients3" SortExpression="Ingredients3" />
+                    <asp:BoundField DataField="Ingredients4" HeaderText="Ingredients4" SortExpression="Ingredients4" />
+                    <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients5" SortExpression="Ingredients5" />
+                    <asp:BoundField DataField="Preperation" HeaderText="Preperation" SortExpression="Preperation" />
+                    <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
+                </Fields>
+            </asp:DetailsView>
         </p>
     
     </div>
