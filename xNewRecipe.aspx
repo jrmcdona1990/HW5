@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Recipe.aspx.vb" Inherits="Recipe" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="xNewRecipe.aspx.vb" Inherits="Recipe" %>
 
 <!DOCTYPE html>
 
@@ -24,12 +24,12 @@
         <p class="auto-style1" style="text-align: center">
             <strong><a href = "Default.aspx"> Home</a> |<a href= "NewRecipe.aspx"> New Recipes </a> |<a href= "AboutUS.aspx"> About Us</a> |<a href= "Contact.aspx"> Contact </a>|</strong></p>
         <p class="auto-style1" style="text-align: center">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" DeleteCommand="DELETE FROM [Table] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table] ([Receipe], [SubmittedBy], [Ingredients1], [Ingredients2], [Ingredients3], [Ingredients4], [Ingredients5], [Preperation], [Notes]) VALUES (@Receipe, @SubmittedBy, @Ingredients1, @Ingredients2, @Ingredients3, @Ingredients4, @Ingredients5, @Preperation, @Notes)" SelectCommand="SELECT * FROM [Table] WHERE ([Id] = @Id)" UpdateCommand="UPDATE [Table] SET [Receipe] = @Receipe, [SubmittedBy] = @SubmittedBy, [Ingredients1] = @Ingredients1, [Ingredients2] = @Ingredients2, [Ingredients3] = @Ingredients3, [Ingredients4] = @Ingredients4, [Ingredients5] = @Ingredients5, [Preperation] = @Preperation, [Notes] = @Notes WHERE [Id] = @Id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" DeleteCommand="DELETE FROM [Table] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table] ([Receipe ], [SubmittedBy], [Ingredients1], [Ingredients2], [Ingredients3], [Ingredients4], [Ingredients5], [Preperation], [Notes]) VALUES (@Receipe_, @SubmittedBy, @Ingredients1, @Ingredients2, @Ingredients3, @Ingredients4, @Ingredients5, @Preperation, @Notes)" SelectCommand="SELECT * FROM [Table] WHERE ([Id] = @Id)" UpdateCommand="UPDATE [Table] SET [Receipe ] = @Receipe_, [SubmittedBy] = @SubmittedBy, [Ingredients1] = @Ingredients1, [Ingredients2] = @Ingredients2, [Ingredients3] = @Ingredients3, [Ingredients4] = @Ingredients4, [Ingredients5] = @Ingredients5, [Preperation] = @Preperation, [Notes] = @Notes WHERE [Id] = @Id">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="Int32" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Receipe" Type="String" />
+                    <asp:Parameter Name="Receipe_" Type="String" />
                     <asp:Parameter Name="SubmittedBy" Type="String" />
                     <asp:Parameter Name="Ingredients1" Type="String" />
                     <asp:Parameter Name="Ingredients2" Type="String" />
@@ -43,7 +43,7 @@
                     <asp:QueryStringParameter Name="Id" QueryStringField="Id" Type="Int32" />
                 </SelectParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="Receipe" Type="String" />
+                    <asp:Parameter Name="Receipe_" Type="String" />
                     <asp:Parameter Name="SubmittedBy" Type="String" />
                     <asp:Parameter Name="Ingredients1" Type="String" />
                     <asp:Parameter Name="Ingredients2" Type="String" />
@@ -55,21 +55,18 @@
                     <asp:Parameter Name="Id" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
-        </p>
-        <p class="auto-style1" style="text-align: center">
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="125px">
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="424px" DefaultMode="Insert">
                 <Fields>
-                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-                    <asp:BoundField DataField="Receipe" HeaderText="Receipe" SortExpression="Receipe" />
-                    <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
-                    <asp:BoundField DataField="Ingredients1" HeaderText="Ingredients1" SortExpression="Ingredients1" />
-                    <asp:BoundField DataField="Ingredients2" HeaderText="Ingredients2" SortExpression="Ingredients2" />
-                    <asp:BoundField DataField="Ingredients3" HeaderText="Ingredients3" SortExpression="Ingredients3" />
-                    <asp:BoundField DataField="Ingredients4" HeaderText="Ingredients4" SortExpression="Ingredients4" />
-                    <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients5" SortExpression="Ingredients5" />
+                    <asp:BoundField DataField="Receipe " HeaderText="Receipe " SortExpression="Receipe " />
+                    <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
+                    <asp:BoundField DataField="Ingredients1" HeaderText="Ingredients 1" SortExpression="Ingredients1" />
+                    <asp:BoundField DataField="Ingredients2" HeaderText="Ingredients 2" SortExpression="Ingredients2" />
+                    <asp:BoundField DataField="Ingredients3" HeaderText="Ingredients 3" SortExpression="Ingredients3" />
+                    <asp:BoundField DataField="Ingredients4" HeaderText="Ingredients 4" SortExpression="Ingredients4" />
+                    <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients 5" SortExpression="Ingredients5" />
                     <asp:BoundField DataField="Preperation" HeaderText="Preperation" SortExpression="Preperation" />
                     <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:CommandField ShowInsertButton="True" ButtonType="Button" />
                 </Fields>
             </asp:DetailsView>
         </p>
