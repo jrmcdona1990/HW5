@@ -24,7 +24,7 @@
         <p class="auto-style1" style="text-align: center">
             <strong><a href = "Default.aspx"> Home</a> |<a href= "Recipe.aspx"> New Recipes </a> |<a href= "AboutUS.aspx"> About Us</a> |<a href= "Contact.aspx"> Contact </a>|</strong></p>
         <p class="auto-style1" style="text-align: center">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" DeleteCommand="DELETE FROM [Table] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table] ([Receipe ], [SubmittedBy], [Ingredients1], [Ingredients2], [Ingredients3], [Ingredients4], [Ingredients5], [Preperation], [Notes]) VALUES (@Receipe_, @SubmittedBy, @Ingredients1, @Ingredients2, @Ingredients3, @Ingredients4, @Ingredients5, @Preperation, @Notes)" SelectCommand="SELECT * FROM [Table]" UpdateCommand="UPDATE [Table] SET [Receipe ] = @Receipe_, [SubmittedBy] = @SubmittedBy, [Ingredients1] = @Ingredients1, [Ingredients2] = @Ingredients2, [Ingredients3] = @Ingredients3, [Ingredients4] = @Ingredients4, [Ingredients5] = @Ingredients5, [Preperation] = @Preperation, [Notes] = @Notes WHERE [Id] = @Id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" DeleteCommand="DELETE FROM [Table] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table] ([Receipe ], [SubmittedBy], [Ingredients1], [Ingredients2], [Ingredients3], [Ingredients4], [Ingredients5], [Preperation], [Notes]) VALUES (@Receipe_, @SubmittedBy, @Ingredients1, @Ingredients2, @Ingredients3, @Ingredients4, @Ingredients5, @Preperation, @Notes)" SelectCommand="SELECT * FROM [Table] WHERE ([Id] = @Id)" UpdateCommand="UPDATE [Table] SET [Receipe ] = @Receipe_, [SubmittedBy] = @SubmittedBy, [Ingredients1] = @Ingredients1, [Ingredients2] = @Ingredients2, [Ingredients3] = @Ingredients3, [Ingredients4] = @Ingredients4, [Ingredients5] = @Ingredients5, [Preperation] = @Preperation, [Notes] = @Notes WHERE [Id] = @Id">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="Int32" />
                 </DeleteParameters>
@@ -39,6 +39,9 @@
                     <asp:Parameter Name="Preperation" Type="String" />
                     <asp:Parameter Name="Notes" Type="String" />
                 </InsertParameters>
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="Id" QueryStringField="Id" Type="Int32" />
+                </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="Receipe_" Type="String" />
                     <asp:Parameter Name="SubmittedBy" Type="String" />
@@ -63,14 +66,13 @@
                     <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients5" SortExpression="Ingredients5" />
                     <asp:BoundField DataField="Preperation" HeaderText="Preperation" SortExpression="Preperation" />
                     <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Fields>
             </asp:DetailsView>
         </p>
     
     </div>
         <div class="auto-style2">
-            <asp:Button ID="Button1" runat="server" Text="Edit " />
-            <asp:Button ID="Button2" runat="server" Text="Delete" />
             <br />
             <br />
             <h6>©&nbsp;2013.&nbsp;6K:183&nbsp;Software&nbsp;Design&nbsp;&amp;&nbsp;Development</h6>
