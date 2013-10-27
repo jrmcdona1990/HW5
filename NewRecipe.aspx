@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /> 
     <style type="text/css">
 
         .auto-style1 {
@@ -17,7 +18,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
     
         <h1 class="auto-style1" style="text-align: center">Wicked Easy Recipes</h1>
         <h3 style="text-align: center">Using 5 Ingredients or Less!</h3>
@@ -57,19 +57,19 @@
             </asp:SqlDataSource>
         </p>
         <p class="auto-style1" style="text-align: center">
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="125px" DefaultMode="Insert">
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="396px" DefaultMode="Insert">
                 <Fields>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-                    <asp:BoundField DataField="Receipe" HeaderText="Receipe" SortExpression="Receipe" />
-                    <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
-                    <asp:BoundField DataField="Ingredients1" HeaderText="Ingredients1" SortExpression="Ingredients1" />
-                    <asp:BoundField DataField="Ingredients2" HeaderText="Ingredients2" SortExpression="Ingredients2" />
-                    <asp:BoundField DataField="Ingredients3" HeaderText="Ingredients3" SortExpression="Ingredients3" />
-                    <asp:BoundField DataField="Ingredients4" HeaderText="Ingredients4" SortExpression="Ingredients4" />
-                    <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients5" SortExpression="Ingredients5" />
+                    <asp:BoundField DataField="Receipe" HeaderText="Recipe" SortExpression="Receipe" />
+                    <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
+                    <asp:BoundField DataField="Ingredients1" HeaderText="Ingredients 1" SortExpression="Ingredients1" />
+                    <asp:BoundField DataField="Ingredients2" HeaderText="Ingredients 2" SortExpression="Ingredients2" />
+                    <asp:BoundField DataField="Ingredients3" HeaderText="Ingredients 3" SortExpression="Ingredients3" />
+                    <asp:BoundField DataField="Ingredients4" HeaderText="Ingredients 4" SortExpression="Ingredients4" />
+                    <asp:BoundField DataField="Ingredients5" HeaderText="Ingredients 5" SortExpression="Ingredients5" />
                     <asp:BoundField DataField="Preperation" HeaderText="Preperation" SortExpression="Preperation" />
                     <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-                    <asp:CommandField ShowInsertButton="True" />
+                    <asp:CommandField ShowInsertButton="True" ButtonType="Button" />
                 </Fields>
             </asp:DetailsView>
         </p>
