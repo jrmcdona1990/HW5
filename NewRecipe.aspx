@@ -57,7 +57,20 @@
             </asp:SqlDataSource>
         </p>
         <p class="auto-style1" style="text-align: center">
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="396px" DefaultMode="Insert">
+            <asp:DetailsView 
+                ID="DetailsView1" 
+                runat="server" 
+                AutoGenerateRows="False" 
+                DataKeyNames="Id" 
+                DataSourceID="SqlDataSource1" 
+                Height="50px" 
+                Width="400px" 
+                DefaultMode="Insert"
+               CssClass="cssdetailsview"
+                AlternatingRowStyle-CssClass="alt"
+                PagerStyle-CssClass="pgr"
+        
+                >
                 <Fields>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
                     <asp:BoundField DataField="Receipe" HeaderText="Recipe" SortExpression="Receipe" />

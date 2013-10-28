@@ -21,15 +21,26 @@
         <p style="text-align: center">
             <strong><a href = "Default.aspx"> Home</a> |<a href= "NewRecipe.aspx"> New Recipes </a> |<a href= "AboutUS.aspx"> About Us </a> |<a href= "Contact.aspx"> Contact </a>|</strong></p>
         <p style="text-align: center">
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" SelectCommand="SELECT [Receipe ] AS Receipe_, [SubmittedBy], [Id] FROM [Table]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Width="743px">
+
+          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_HW5 %>" SelectCommand="SELECT [Receipe ] AS Receipe_, [SubmittedBy], [Id] FROM [Table]"></asp:SqlDataSource>
+            <asp:GridView 
+                ID="GridView1" 
+                runat="server" 
+                AutoGenerateColumns="False" 
+                DataKeyNames="Id" 
+                DataSourceID="SqlDataSource1" 
+                Width="743px"
+                CssClass="cssgridview"
+                AlternatingRowStyle-CssClass="alt"
+                PagerStyle-CssClass="pgr"
+
+                >
                 <Columns>
                     <asp:BoundField DataField="Receipe_" HeaderText="Recipe" SortExpression="Receipe_" />
                     <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />
                     <asp:HyperLinkField DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Recipe.aspx?Id={0}" HeaderText="Submitted By" SortExpression="Id" Text="Select" />
                 </Columns>
             </asp:GridView>
-
         </p>
         <p style="text-align: center">
             &nbsp;</p>

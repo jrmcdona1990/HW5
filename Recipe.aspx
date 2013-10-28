@@ -58,7 +58,23 @@
             </asp:SqlDataSource>
         </p>
         <p class="auto-style1" style="text-align: center">
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="298px">
+            <asp:DetailsView 
+                ID="DetailsView1" 
+                runat="server" 
+                AutoGenerateRows="False" 
+                DataKeyNames="Id" 
+                DataSourceID="SqlDataSource1" 
+                Height="50px" 
+                Width="400px"
+                CssClass="cssgridview"
+                HeaderStyle-CssClass="header"
+                FieldHeaderStyle-CssClass="fieldheader"
+                ItemStyle-CssClass="item"
+                AlternatingRowStyle-CssClass="altrow"
+                CommandRowStyle-CssClass="command"
+                PagerStyle-CssClass="pager"        
+                
+                >
                 <Fields>
                     <asp:BoundField DataField="Receipe" HeaderText="Recipe" SortExpression="Receipe" />
                     <asp:BoundField DataField="SubmittedBy" HeaderText="Submitted By" SortExpression="SubmittedBy" />

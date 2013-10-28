@@ -1,5 +1,279 @@
 ﻿body {background-color: tan;
 
 }
+#contactbox {
+    width: auto;
+    margin-left: 200px;
+    margin-right: auto;
+}
+#h7{
+    width: auto;
+    margin-left: 280px;
+    margin-right: auto;
+}
+#text {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#DetailsView1
+{
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#GridView1
+{
+    width:200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.cssgridview {
+       margin:25px 200px 50px 200px;
+      
+}
+
+#tables {
+
+    background-color: coral;
+
+    color: silver;
+
+}
+
+
+
+
+/* CSS to format a gridview -- START*/
+
+.cssgridview {
+
+            width:100%; 
+
+              background-color:#F08080; 
+
+              border:solid 6px white;
+
+}
+
+.cssgridview td {
+
+                padding:10px; 
+
+                 border:solid 1px; 
+
+                 color:#FFFFFF;
+
+}
+
+.cssgridview th{
+
+                padding:4px 2px; 
+
+                border:solid 1px; 
+
+                color:#F08080 ;
+
+                background-color:#FFFF99;
+
+}
+
+.cssgridview th a {
+
+                color: silver;
+
+                text-decoration: none;
+
+}
+
+.cssgridview .header td{
+
+                width:150px; 
+
+                text-align:center; 
+
+                color:#FFFF99
+
+}
+
+/* CSS to format a gridview -- END*/
+
+
+
+
+
+
+
+
+
+
+/* CSS to format a detailsview --START */
+
+.cssdetailsview {
+
+            width:100%; 
+
+              background-color:#F08080; 
+
+              border:solid 6px white;
+
+}
+
+.cssdetailsview td {
+
+                padding:10px; 
+
+                 border:solid 1px; 
+
+                 color:#FFFFFF;
+
+}
+
+.cssdetailsview th{
+
+                padding:4px 2px; 
+
+                border:solid 1px; 
+
+                color:#F08080 ;
+
+                background-color:#FFFF99;
+
+}
+
+.cssdetailsview th a {
+
+                color: silver;
+
+                text-decoration: none;
+
+}
+
+.cssdetailsview .header td{
+
+                width:150px; 
+
+                text-align:center; 
+
+                color:#FFFF99
+
+/* CSS to format a detailsview --END */#tables {
+
+    background-color: coral;
+
+    color: silver;
+
+}
+
+
+
+
+/* CSS to format a gridview -- START*/
+
+.cssgridview {
+
+            width:100%; 
+
+              background-color:#F08080; 
+
+              border:solid 6px white;
+
+}
+
+.cssgridview td {
+
+                padding:10px; 
+
+                 border:solid 1px; 
+
+                 color:#FFFFFF;
+
+}
+
+.cssgridview th{
+
+                padding:4px 2px; 
+
+                border:solid 1px; 
+
+                color:#F08080 ;
+
+                background-color:#FFFF99;
+
+}
+
+.cssgridview th a {
+
+                color: silver;
+
+                text-decoration: none;
+
+}
+
+.cssgridview .header td{
+
+                width:150px; 
+
+                text-align:center; 
+
+                color:#FFFF99
+
+}
+
+/* CSS to format a gridview -- END*/
+
+
+/* CSS to format a detailsview --START */
+
+.cssdetailsview {
+
+            width:100%; 
+
+              background-color:#F08080; 
+
+              border:solid 6px white;
+
+}
+
+.cssdetailsview td {
+
+                padding:10px; 
+
+                 border:solid 1px; 
+
+                 color:#FFFFFF;
+
+}
+
+.cssdetailsview th{
+
+                padding:4px 2px; 
+
+                border:solid 1px; 
+
+                color:#F08080 ;
+
+                background-color:#FFFF99;
+
+}
+
+.cssdetailsview th a {
+
+                color: silver;
+
+                text-decoration: none;
+
+}
+
+.cssdetailsview .header td{
+
+                width:150px; 
+
+                text-align:center; 
+
+                color:#FFFF99
+
+/* CSS to format a detailsview --END */
 
 
